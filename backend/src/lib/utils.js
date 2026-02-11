@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { ENV } from "./env.js";
 
 export const generateToken = (userId, res) => {
   if (!process.env.JWT_SECRET) {
@@ -6,7 +7,7 @@ export const generateToken = (userId, res) => {
   }
   const isProd = process.env.NODE_ENV === "production";
 
-  const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
+  const token = jwt.sign({ userId }, ENV.JWT_SECRET, {
     expiresIn: "7d",
   });
 
