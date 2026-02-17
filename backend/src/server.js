@@ -5,6 +5,7 @@ import messageRoutes from "./Routes/message.route.js";
 import path from "path";
 import { connectDB } from "./lib/db.js";
 import { ENV } from "./lib/env.js";
+import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
